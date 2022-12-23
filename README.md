@@ -14,7 +14,7 @@ Travelers often struggle with bad experiences and miss great ones with the accom
 * "Hotels nearby"
 
 ## Credits
-Andrei G
+Abdo Magdy, Andrei G, GowthamKrishna
 
 ## Category
 **Information**
