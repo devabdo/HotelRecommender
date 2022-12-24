@@ -1,6 +1,7 @@
 from mycroft import MycroftSkill, intent_file_handler, intent_handler
 from mycroft.util.parse import match_one
 from mycroft.audio import wait_while_speaking
+from . import hotels
 
 class HotelSearcher(MycroftSkill):
     def __init__(self):
