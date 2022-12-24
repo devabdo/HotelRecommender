@@ -13,6 +13,10 @@ Travelers often struggle with bad experiences and miss great ones with the accom
 * "Find a good hotel"
 * "Hotels nearby"
 
+## Backend Requirements
+1. MyCroft AI 
+2. Cohere 
+
 ## Credits
 Abdo Magdy, Andrei G, GowthamKrishna
 
