@@ -1,7 +1,7 @@
 from mycroft import MycroftSkill, intent_file_handler, intent_handler
 from mycroft.util.parse import match_one
 from mycroft.audio import wait_while_speaking
-from . import hotels.search
+from hotels.py import *
 
 class HotelSearcher(MycroftSkill):
     def __init__(self):
@@ -22,8 +22,6 @@ class HotelSearcher(MycroftSkill):
         self.log.info('Hotels result: {str(hotels_result)}')
         for hotel in hotels_result:
             self.speak(hotel, wait=True)
-        # self.speak_dialog('searcher.hotel')
-
 
 def create_skill():
     return HotelSearcher()
