@@ -12,7 +12,7 @@ class HotelSearcher(MycroftSkill):
     @intent_handler('searcher.hotel.intent')
     def handle_searcher_hotel(self, message):
         if message.data.get('city') is None:
-            response = self.get_response('searcher.hotel', num_retries=0)
+            response = self.get_response('searcher.hotel')
             if response is None:
                 return
         else:
