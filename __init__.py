@@ -3,7 +3,7 @@ from mycroft.skills.core import MycroftSkill, intent_file_handler, intent_handle
 from mycroft.util.parse import match_one
 from mycroft.audio import wait_while_speaking
 from mycroft.util.log import LOG
-from hotels.py import search
+from . import hotels
 
 class HotelSearcher(MycroftSkill):
     def __init__(self):
@@ -23,7 +23,7 @@ class HotelSearcher(MycroftSkill):
         hotels_result = hotels.search(response)
         self.log.info('Hotels result: {str(hotels_result)}')
         for hotel in hotels_result:
-            self.speak_dialog(hotel, wait=True)
+            self.speak(hotel, wait=True)
 
 def create_skill():
     return HotelSearcher()
