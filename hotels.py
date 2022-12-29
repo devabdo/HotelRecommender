@@ -14,16 +14,19 @@ import torch.nn.functional as F
 
 from typing import List, Union, Dict, Any
 
-##Important functions
+# Cohere API Key
 
-##get embeddings from cohere
+COHERE_API_KEY = 'd8eTHtyzVN2e6LKLpy8E8xZkyFfmSwZWIayDhKIt'  #@param {type:"raw"}
+co = cohere.Client(COHERE_API_KEY)
+
+## Get Embeddings from co:here
 
 model_name = 'multilingual-22-12' #@param ["multilingual-22-12", "small", "large"]
 def get_embeddings(co: cohere.Client, model_name: str, texts: List[str], truncate: str = "RIGHT"):
     output = co.embed(model=model_name, texts=texts, truncate=truncate)
     return output.embeddings
 
-## similarity function 
+## co:here similarity function 
 torchfy = lambda x: torch.as_tensor(x, dtype=torch.float32)
 
 def get_similarity(target: List[float], candidates: List[float], top_k: int):
@@ -37,22 +40,12 @@ def get_similarity(target: List[float], candidates: List[float], top_k: int):
     return similarity_hits   
 
 
-url = "https://hotels4.p.rapidapi.com/locations/v3/search"
-
-API_KEY = '5fa5658111mshd1008bbe356bc06p1ac1f6jsn9e45212f9333'
-HEADERS = {
-    'X-RapidAPI-Key': API_KEY,
-    'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
-}
-COHERE_API_KEY = 'd8eTHtyzVN2e6LKLpy8E8xZkyFfmSwZWIayDhKIt'  #@param {type:"raw"}
-co = cohere.Client(COHERE_API_KEY)
-
-##Read the dataframe to display the city and location of hotel
+## Read the dataframe to display the city and location of hotel
 
 df = pd.read_pickle("dummy.pkl")  
 df['reviews.text'] = df['reviews.text'] + " Hotel is in "+ df['city'] +' has postalcode of ' + df['postalCode']
 
-#load the embeddings
+# Load the embeddings
 
 embeddings = torch.load('embeddings_kaggle.pt')
 embeddings = embeddings.tolist()
