@@ -3,7 +3,7 @@ from mycroft.skills.core import MycroftSkill, intent_file_handler, intent_handle
 from mycroft.util.parse import match_one
 from mycroft.audio import wait_while_speaking
 from mycroft.util.log import LOG
-from hotels.py import hotels.search()
+from hotels.py import search
 
 class HotelSearcher(MycroftSkill):
     def __init__(self):
@@ -11,7 +11,6 @@ class HotelSearcher(MycroftSkill):
         self.is_reading = False
         self.register_entity_file('city.entity')
 
-        
     @intent_handler('searcher.hotel.intent')
      def handle_searcher_hotel(self, message):
         if message.data.get('city') is None:
