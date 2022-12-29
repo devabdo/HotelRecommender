@@ -2,8 +2,7 @@ import requests
 import os
 import json
 from time import time
-
-# import umap
+import umap
 import torch
 import cohere
 import warnings
@@ -14,7 +13,6 @@ import matplotlib.pyplot as plt
 import torch.nn.functional as F
 
 from typing import List, Union, Dict, Any
-
 
 ##Important functions
 
@@ -39,7 +37,6 @@ def get_similarity(target: List[float], candidates: List[float], top_k: int):
     return similarity_hits   
 
 
-
 url = "https://hotels4.p.rapidapi.com/locations/v3/search"
 
 API_KEY = '5fa5658111mshd1008bbe356bc06p1ac1f6jsn9e45212f9333'
@@ -52,7 +49,6 @@ co = cohere.Client(COHERE_API_KEY)
 
 ##Read the dataframe to display the city and location of hotel
 
-
 df = pd.read_pickle("dummy.pkl")  
 df['reviews.text'] = df['reviews.text'] + " Hotel is in "+ df['city'] +' has postalcode of ' + df['postalCode']
 
@@ -60,7 +56,6 @@ df['reviews.text'] = df['reviews.text'] + " Hotel is in "+ df['city'] +' has pos
 
 embeddings = torch.load('embeddings_kaggle.pt')
 embeddings = embeddings.tolist()
-
 
 # def search(query: str):
 #     params = {'q': f'{query} hotels', 'locale': 'en_US'}
