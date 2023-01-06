@@ -1,0 +1,25 @@
+name: CoHotel
+author: CoHotel Team
+description: Find your best matching accomodation in the US based on Semantically Searching Hotel Reviews in the US
+version: 0.1
+dependencies: []
+
+# How to launch the skill
+entry: cohotel.elpreneurabdo
+
+# Required intents
+intents:
+  - Find {Descriptive Phrase} Hotel in {City}
+  
+# Required utterances for the example_intent
+example_intent:
+  - Find {Descriptive Phrase} Hotel in {City}
+
+
+# Required utterances for the Stop intent
+stop:
+  - stop
+  - cancel
+  - end
+  - quit
+  - exit
