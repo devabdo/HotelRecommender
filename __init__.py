@@ -17,7 +17,7 @@ class HotelSearcher(MycroftSkill):
         self.is_reading = False
         self.register_entity_file('city.entity')
 
-    @intent_handler('searcher.hotel.intent')
+    @intent_handler('searcher.hotel')
      def handle_searcher_hotel(self, message):
         if message.data.get('city') is None:
             response = self.get_response('searcher.hotel')
