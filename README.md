@@ -1,4 +1,4 @@
-# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/hotel.svg" card_color="#22A7F0" width="50" height="50" style="vertical-align:bottom"/> CoHotel 
+# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/hotel.svg" card_color="#22A7F0" width="50" height="50" style="vertical-align:bottom"/> CoHotel: MyCroft AI Hotel Recommender Plugin
 MyCroft AI Skill that matches you with the accommodation where you can have your best stay in US cities. Uses co:here Semantic Search API to search hotel reviews (now in the US only)
 
 ## About
